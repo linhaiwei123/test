@@ -1,10 +1,80 @@
-<style>
-img{
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-</style>
-<html>
-<img src="./data.png"/>
-</html>
+<!DOCTYPE html>
+<html lang="en" style="font-size: 18.75px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>疫情期间行程查询</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style,content=black">
+    <link rel="stylesheet" type="text/css" href="./疫情期间行程查询_files/common.css">
+    <link rel="stylesheet" href="./疫情期间行程查询_files/common.css">
+    <link rel="stylesheet" href="./疫情期间行程查询_files/newIndex.css">
+</head>
+<body>
+<div id="app" style="display: block;">
+    <img class="title_bg" src="./疫情期间行程查询_files/new-bg-t.png" alt="">
+    <div class="main">
+        <div class="res_wrapper">
+            <div class="res">
+                <div class="res_inner">
+                    <div class="res_title">尊敬的<span class="show_phone">137****7114</span>客户</div>
+                    <div class="res_title_line"></div>
+                    <div class="res_data">
+                        <div class="res_data_1">
+                            <div class="res_data_t1">根据您于<span class="data_time" style="color: rgb(62, 98, 255);">2020年03月08日 23:05:18</span>的授权查询，您于近14天内：</div>
+                            <div class="res_data_box">到达过或途经<span class="data1">广东(深圳)</span></div>
+                        </div>
+                        <div class="res_data_2">
+                            <div class="res_data_t2">您于近15-30天内：</div>
+                            <div class="res_data_box">到达过或途经<span class="data2">广东(汕头)</span></div>
+                        </div>
+
+                    </div>
+                    <div class="res_foot">抗击疫情，中国移动和您一起努力</div>
+                </div>
+            </div>
+            <div class="foot_tip">
+                <p>1、此服务为公益服务，提供查询时间范围内的用户返程复工证明数据，查询结果仅供参考，不作为最终判定依据。</p>
+                <p>
+                    2、请查询人员注意数据安全。
+                </p>
+                <p>3、以上查询信息不排除国内相邻城市边界漫游可能；另因漫游地运营商话单延迟等原因，国际及港澳台漫游地区的到访信息可能存在滞后性。</p>
+                <p>4、请严格遵守《中华人民共和国网络安全法》规定，不得利用本工具提供的数据从事侵害他人名誉、隐私等活动。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+    var d = new Date();
+    var day = d.getDay();
+    var hr = d.getHours();
+    var min = d.getMinutes();
+    if (min < 10) {
+        min = "0" + min;
+    }
+    var ampm = "am";
+    if(hr < 10)
+    {
+        hr = "0" + hr
+    }
+    var sec = d.getSeconds();
+    if(sec < 10)
+    {
+        sec = "0" + sec
+    }
+    var date = d.getDate();
+    if(date < 10) {
+        data = "0" + date;
+    }
+    var month = d.getMonth();
+    month += 1
+    if(month < 10)
+    {
+        month = "0" + month;
+    }
+    var year = d.getFullYear();
+    var x = document.getElementsByClassName("data_time")[0];
+    // 2020年03月08日 23:05:18
+    x.innerText = `${year}年${month}月${data}日 ${hr}:${min}:${sec}`;
+})
+</script>
+</body></html>
