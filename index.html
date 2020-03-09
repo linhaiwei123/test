@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
     var date = d.getDate();
     if(date < 10) {
-        data = "0" + date;
+        date = "0" + date;
     }
     var month = d.getMonth();
     month += 1
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var year = d.getFullYear();
     var x = document.getElementsByClassName("data_time")[0];
     // 2020年03月08日 23:05:18
-    x.innerText = `${year}年${month}月${data}日 ${hr}:${min}:${sec}`;
+    x.innerText = `${year}年${month}月${date}日 ${hr}:${min}:${sec}`;
 })
 </script>
 </body></html>
